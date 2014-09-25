@@ -19,15 +19,17 @@
 package jetbrick.ioc.injector;
 
 import java.lang.annotation.Annotation;
+import java.util.Collection;
+import java.util.List;
 import jetbrick.ioc.Ioc;
 import jetbrick.ioc.annotation.Config;
+import jetbrick.typecast.TypeCastUtils;
 import jetbrick.util.Validate;
 import jetbrick.util.annotation.ValueConstants;
 
 // 注入 @Config 标注的参数
 public final class ConfigParameterInjector implements ParameterInjector {
     private ParameterContext ctx;
-    private Object value;
 
     @Override
     public void initialize(ParameterContext ctx) {
@@ -44,9 +46,27 @@ public final class ConfigParameterInjector implements ParameterInjector {
         boolean required = config.required();
 
         Ioc ioc = ctx.getIoc();
-        Class<?> parameterType = ctx.getRawParameterType();
+        Class<?> type = ctx.getRawParameterType();
         String defaultValue = ValueConstants.trimToNull(config.defaultValue());
-        Object value = ioc.getConfig(name, parameterType, defaultValue);
+
+        Object value;
+        if (type == List.class || type == Collection.class || type.isArray()) {
+            Class<?> elementType;
+            if (type.isArray()) {
+                elementType = type.getComponentType();
+            } else {
+                elementType = ctx.getRawParameterComponentType(0);
+            }
+
+            value = ioc.getConfigAsList(config.value(), elementType);
+
+            // list to array
+            if (type.isArray()) {
+                value = TypeCastUtils.convertToArray(value, elementType);
+            }
+        } else {
+            value = ioc.getConfigAsValue(config.value(), type, defaultValue);
+        }
 
         if (value == null && required) {
             throw new IllegalStateException("Can't inject @Config parameter: " + name);

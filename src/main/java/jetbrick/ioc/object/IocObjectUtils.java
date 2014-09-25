@@ -23,7 +23,6 @@ import java.lang.reflect.Method;
 import java.util.*;
 import jetbrick.bean.*;
 import jetbrick.ioc.Ioc;
-import jetbrick.ioc.IocConfig;
 import jetbrick.ioc.annotation.*;
 import jetbrick.ioc.injector.*;
 import jetbrick.ioc.injector.FieldInjector.FieldContext;
@@ -117,7 +116,7 @@ public final class IocObjectUtils {
         }
         List<PropertyInjector> injectors = new ArrayList<PropertyInjector>();
         for (String name : propNames) {
-            
+
             String propName = StringUtils.substringAfter(name, ".");
             PropertyInfo prop = klass.getProperty(propName);
             if (prop == null) {
@@ -132,7 +131,7 @@ public final class IocObjectUtils {
             if (List.class.isAssignableFrom(rawType)) {
                 value = ioc.getConfigAsList(name, prop.getRawComponentType(klass.getType(), 0));
             } else {
-                value = ioc.getConfig(name, rawType);
+                value = ioc.getConfigAsValue(name, rawType);
             }
             injectors.add(new PropertyInjector(prop, value));
         }

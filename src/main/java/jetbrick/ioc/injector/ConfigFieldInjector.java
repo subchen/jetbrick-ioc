@@ -19,7 +19,8 @@
 package jetbrick.ioc.injector;
 
 import java.lang.annotation.Annotation;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 import jetbrick.bean.FieldInfo;
 import jetbrick.ioc.Ioc;
 import jetbrick.ioc.annotation.Config;
@@ -61,7 +62,7 @@ public final class ConfigFieldInjector implements FieldInjector {
             }
         } else {
             String defaultValue = ValueConstants.trimToNull(config.defaultValue());
-            value = ioc.getConfig(config.value(), type, defaultValue);
+            value = ioc.getConfigAsValue(config.value(), type, defaultValue);
         }
     }
 
