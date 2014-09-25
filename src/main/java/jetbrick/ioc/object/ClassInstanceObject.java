@@ -22,8 +22,8 @@ import java.lang.reflect.Method;
 import java.util.List;
 import jetbrick.bean.KlassInfo;
 import jetbrick.ioc.Ioc;
-import jetbrick.ioc.IocConfig;
-import jetbrick.ioc.injector.*;
+import jetbrick.ioc.injector.CtorInjector;
+import jetbrick.ioc.injector.FieldInjector;
 
 public final class ClassInstanceObject extends InstanceObject {
     private final Class<?> beanClass;

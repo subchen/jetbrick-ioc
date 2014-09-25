@@ -163,7 +163,7 @@ public final class MutableIoc implements Ioc {
         if (ctorInjector == null) {
             try {
                 return type.newInstance();
-            } catch(Exception e) {
+            } catch (Exception e) {
                 throw ExceptionUtils.unchecked(e);
             }
         } else {
@@ -189,7 +189,7 @@ public final class MutableIoc implements Ioc {
         if (initializeMethod != null) {
             try {
                 initializeMethod.invoke(object, (Object[]) null);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 throw ExceptionUtils.unchecked(e);
             }
         }

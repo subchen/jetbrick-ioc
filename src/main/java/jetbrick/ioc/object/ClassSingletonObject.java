@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Set;
 import jetbrick.bean.KlassInfo;
 import jetbrick.ioc.Ioc;
-import jetbrick.ioc.IocConfig;
 import jetbrick.ioc.injector.*;
 
 public final class ClassSingletonObject extends SingletonObject {
@@ -33,7 +32,7 @@ public final class ClassSingletonObject extends SingletonObject {
     public ClassSingletonObject(Ioc ioc, Class<?> beanClass) {
         this(ioc, beanClass, null);
     }
-    
+
     public ClassSingletonObject(Ioc ioc, Class<?> beanClass, Set<String> propNames) {
         super(ioc);
         this.beanClass = beanClass;

@@ -18,7 +18,8 @@
  */
 package jetbrick.ioc.object;
 
-import jetbrick.ioc.*;
+import jetbrick.ioc.Ioc;
+import jetbrick.ioc.IocFactory;
 
 public final class FactorySingletonObject extends SingletonObject {
     private final Class<?> factoryClass;

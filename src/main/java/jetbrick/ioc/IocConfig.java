@@ -26,14 +26,14 @@ public final class IocConfig extends AbstractConfig {
     private final Ioc ioc;
 
     public IocConfig(Ioc ioc) {
-        super(Collections.<String, String>emptyMap());
+        super(Collections.<String, String> emptyMap());
         this.ioc = ioc;
     }
-    
+
     public Ioc getIoc() {
         return ioc;
     }
-    
+
     protected void load(Map<String, String> map) {
         config.putAll(map);
     }

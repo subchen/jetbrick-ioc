@@ -18,8 +18,9 @@
  */
 package jetbrick.ioc.loader;
 
-import java.util.*;
-import jetbrick.ioc.*;
+import jetbrick.config.Config;
+import jetbrick.ioc.Ioc;
+import jetbrick.ioc.MutableIoc;
 import jetbrick.ioc.object.SingletonObject;
 
 public final class IocPropertiesLoader implements IocLoader {
@@ -40,15 +41,15 @@ public final class IocPropertiesLoader implements IocLoader {
             }
         }
     }
-    
+
     static final class ConfigSingletonObject extends SingletonObject {
         private final String aliasName;
-            
+
         public ConfigSingletonObject(Ioc ioc, String aliasName) {
             super(ioc);
             this.aliasName = aliasName;
         }
-        
+
         @Override
         protected Object doGetObject() throws Exception {
             return ioc.getConfig().createObject(aliasName, Object.class);
