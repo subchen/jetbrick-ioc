@@ -10,7 +10,7 @@ jetbrick-ioc
 This is an IoC framework for jetbrick.
 
 
-Documents
+Documentation
 ---------------------------
 
 http://subchen.github.io/jetbrick-ioc/
