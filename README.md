@@ -34,13 +34,15 @@ Downloads
     - [jetbrick-ioc-2.0.jar][1]
     - [jetbrick-ioc-2.0-sources.jar][2]
     - [jetbrick-ioc-2.0-javadoc.jar][3]
-* Third-parts
-    - [slf4j-api-1.7.7.jar][4]
+* Dependencies
+    - [jetbrick-commons-2.0.jar][4]
+    - [slf4j-api-1.7.7.jar][5]
 
 [1]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0/jetbrick-ioc-2.0.jar
 [2]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0/jetbrick-ioc-2.0-sources.jar
 [3]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0/jetbrick-ioc-2.0-javadoc.jar
-[4]: http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
+[4]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-commons/2.0/jetbrick-commons-2.0.jar
+[5]: http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
 
 
 License
