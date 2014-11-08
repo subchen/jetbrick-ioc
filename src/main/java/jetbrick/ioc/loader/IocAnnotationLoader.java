@@ -20,36 +20,36 @@
 package jetbrick.ioc.loader;
 
 import java.lang.annotation.Annotation;
-import java.util.Collection;
+import java.util.*;
 import jetbrick.io.finder.ClassFinder;
 import jetbrick.ioc.MutableIoc;
 import jetbrick.ioc.annotation.IocBean;
 import jetbrick.util.annotation.ValueConstants;
 
 public final class IocAnnotationLoader implements IocLoader {
-    private Collection<Class<?>> klasses;
+    private Collection<Class<?>> classes;
 
     public IocAnnotationLoader(String... packageNames) {
-        @SuppressWarnings("unchecked")
-        Class<? extends Annotation>[] annotations = new Class[] { IocBean.class };
-        this.klasses = ClassFinder.getClasses(packageNames, true, annotations, true);
+        List<Class<? extends Annotation>> annotations = new ArrayList<Class<? extends Annotation>>(1);
+        annotations.add(IocBean.class);
+        this.classes = ClassFinder.getClasses(Arrays.asList(packageNames), true, annotations, true);
     }
 
-    public IocAnnotationLoader(Collection<Class<?>> klasses) {
-        this.klasses = klasses;
+    public IocAnnotationLoader(Collection<Class<?>> classes) {
+        this.classes = classes;
     }
 
     @Override
     public void load(MutableIoc ioc) {
-        for (Class<?> klass : klasses) {
-            IocBean anno = klass.getAnnotation(IocBean.class);
+        for (Class<?> cls : classes) {
+            IocBean anno = cls.getAnnotation(IocBean.class);
             if (anno != null) {
-                String name = ValueConstants.defaultValue(anno.value(), klass.getName());
-                ioc.addBean(name, klass, anno.singleton());
+                String name = ValueConstants.defaultValue(anno.value(), cls.getName());
+                ioc.addBean(name, cls, anno.singleton());
             }
         }
 
         // free
-        klasses = null;
+        classes = null;
     }
 }

@@ -20,12 +20,17 @@
 package jetbrick.ioc.loader;
 
 import jetbrick.config.Config;
+import jetbrick.config.ConfigLoader;
 import jetbrick.ioc.Ioc;
 import jetbrick.ioc.MutableIoc;
 import jetbrick.ioc.object.SingletonObject;
 
 public final class IocPropertiesLoader implements IocLoader {
     private final Config config;
+
+    public IocPropertiesLoader(String location) {
+        this.config = new ConfigLoader().load(location).asConfig();
+    }
 
     public IocPropertiesLoader(Config config) {
         this.config = config;
