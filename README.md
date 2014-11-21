@@ -26,6 +26,12 @@ Dependency
     <artifactId>jetbrick-ioc</artifactId>
     <version>2.0.1</version>
 </dependency>
+
+<dependency>
+    <groupId>com.github.subchen</groupId>
+    <artifactId>jetbrick-ioc-spring</artifactId>
+    <version>2.0.1</version>
+</dependency>
 ```
 
 Downloads
@@ -35,15 +41,19 @@ Downloads
     - [jetbrick-ioc-2.0.1.jar][1]
     - [jetbrick-ioc-2.0.1-sources.jar][2]
     - [jetbrick-ioc-2.0.1-javadoc.jar][3]
+    - [jetbrick-ioc-spring-2.0.1.jar][4]
+    - [jetbrick-ioc-spring-2.0.1-sources.jar][5]
 * Dependencies
-    - [jetbrick-commons-2.0.1.jar][4]
-    - [slf4j-api-1.7.7.jar][5]
+    - [jetbrick-commons-2.0.1.jar][11]
+    - [slf4j-api-1.7.7.jar][12]
 
 [1]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0.1/jetbrick-ioc-2.0.1.jar
 [2]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0.1/jetbrick-ioc-2.0.1-sources.jar
 [3]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc/2.0.1/jetbrick-ioc-2.0.1-javadoc.jar
-[4]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-commons/2.0.1/jetbrick-commons-2.0.1.jar
-[5]: http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
+[4]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc-spring/2.0.1/jetbrick-ioc-spring-2.0.1.jar
+[5]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-ioc-spring/2.0.1/jetbrick-ioc-spring-2.0.1-sources.jar
+[11]: http://search.maven.org/remotecontent?filepath=com/github/subchen/jetbrick-commons/2.0.1/jetbrick-commons-2.0.1.jar
+[12]: http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
 
 
 License

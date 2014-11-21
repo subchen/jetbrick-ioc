@@ -10,13 +10,18 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>jetbrick-ioc</artifactId>
+    <artifactId>jetbrick-ioc-parent</artifactId>
     <version>2.0.1</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
     <description>IoC framework for jetbrick.</description>
-    <url>http://subchen.github.io/jetbrick</url>
+    <url>http://subchen.github.io/jetbrick-ioc/</url>
+
+    <modules>
+        <module>jetbrick-ioc</module>
+        <module>jetbrick-ioc-spring</module>
+    </modules>
 
     <scm>
         <url>https://github.com/subchen/jetbrick-ioc.git</url>
@@ -28,18 +33,5 @@
         <system>github issue</system>
         <url>https://github.com/subchen/jetbrick-ioc/issues</url>
     </issueManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>jetbrick-commons</artifactId>
-            <version>2.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-    </dependencies>
 
 </project>
